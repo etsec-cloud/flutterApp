@@ -1,5 +1,4 @@
 import 'package:fitnessapp/Widget/cardClass.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class useCard extends StatelessWidget {
@@ -9,15 +8,17 @@ class useCard extends StatelessWidget {
   });
 
   final CardItem card;
-
   @override
   Widget build(BuildContext context) {
     return Card(
         child: ClipPath(
             child: Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Colors.greenAccent, width: 5),
+          bottom: BorderSide(
+              color:
+                  card.isActivated! ? Colors.greenAccent : Colors.transparent,
+              width: 5),
         ),
       ),
       child: Padding(
